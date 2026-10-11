@@ -41,15 +41,19 @@ Errors: `400` for an empty title, `404` if the task is not found.
 ```bash
 cd backend
 npm install
-cp .env.example .env      # then fill in MONGO_URI
+copy .env.example .env    # Windows (use cp on Mac/Linux), then edit MONGO_URI
 npm start
 ```
 `.env` variables:
 ```
-MONGO_URI=mongodb://127.0.0.1:27017/todo-app   # or your Atlas connection string
+MONGO_URI=mongodb://127.0.0.1:27017/todo-app
 PORT=5000
 ```
-The server runs on http://localhost:5000.
+- `MONGO_URI`: MongoDB connection string. The value above is for a local MongoDB; for MongoDB Atlas, paste your Atlas connection string instead.
+- `PORT`: port the backend runs on (default 5000).
+
+The `.env` file is not committed to Git; `.env.example` lists the variable names.
+The server runs on http://localhost:5000 and prints `MongoDB connected` when ready.
 
 ### 2. Frontend (in a second terminal)
 ```bash
@@ -60,11 +64,22 @@ npm start
 Open http://localhost:3000. Keep both servers running.
 
 ## Screenshots
-Add your screenshots to a `screenshots/` folder and list them here:
-- `screenshots/add-task.png`
-- `screenshots/complete-task.png`
-- `screenshots/delete-task.png`
-- `screenshots/merged-pull-requests.png`
+### Adding a task
+![Adding a task](screenshots/add-task.png)
+
+### Completing a task
+![Completing a task](screenshots/complete-task.png)
+
+### Deleting a task
+![Deleting a task](screenshots/delete-task.png)
+
+### Merged pull requests
+![Merged pull requests](screenshots/merged-pull-requests.png)
+
+## Git workflow
+- Backend developed on `feature/backend`, frontend on `feature/frontend`
+- Each branch was merged into `main` through a pull request
 
 ## Author
-Name: _your name_ · Roll No: _your roll number_
+Name: YOUR NAME · Roll No: YOUR ROLL NUMBER
+Repository: https://github.com/Harikrishnan0000/Web-Todo-List
